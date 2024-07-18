@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Tales-Test_H.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Tales-Test_H" startnode="2" creator="Twine" creator-version="2.9.0" format="Harlowe" format-version="3.3.9" ifid="26205221-A62C-4176-93BE-F1440B9D86FD" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Character Stats" tags="startup" position="975,400" size="100,100">(set: _bard to (dm:
+<tw-storydata name="Tales-Test_H" startnode="2" creator="Twine" creator-version="2.9.0" format="Harlowe" format-version="3.3.9" ifid="26205221-A62C-4176-93BE-F1440B9D86FD" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Character Stats" tags="startup" position="975,400" size="100,100">&lt;!--(set: _bard to (dm:
 &#39;handle&#39;,&#39;Bard&#39;,&#39;realName&#39;,&#39;Percy DeWalt&#39;,&#39;hacking&#39;,1,&#39;nuyen&#39;, 4500))
 
 (set: _sw17ch to(dm:
@@ -18,9 +18,14 @@
 (set: _checkov  to(dm:
 &#39;handle&#39;,&#39;checkov&#39;,&#39;realName&#39;,&#39;Anton Checkov&#39;,&#39;hacking&#39;,3, &#39;nuyen&#39;,500))
 
-(set: $characters to (a: _bard, _sw17ch, _checkov)  ) 
+(set: $characters to (a: _bard, _sw17ch, _checkov)  ) --&gt;
 
-</tw-passagedata><tw-passagedata pid="2" name="Start screen / handle select" tags="" position="950,575" size="100,100">
+(set: $characters to (a: 
+(dm: &#39;handle&#39;,&#39;Bard&#39;,&#39;realName&#39;,&#39;Percy DeWalt&#39;,&#39;hacking&#39;,1,&#39;nuyen&#39;, 4500), 
+(dm: &#39;handle&#39;,&#39;Sw17ch&#39;,&#39;realName&#39;,&#39;Ramona Premis&#39;,&#39;hacking&#39;,7, &#39;nuyen&#39;, 840), 
+(dm: &#39;handle&#39;,&#39;checkov&#39;,&#39;realName&#39;,&#39;Anton Checkov&#39;,&#39;hacking&#39;,3, &#39;nuyen&#39;,500)
+)
+)</tw-passagedata><tw-passagedata pid="2" name="Start screen / handle select" tags="" position="950,575" size="100,100">
 (set: _user to (prompt: &quot;Enter your handle:&quot;,&quot;&quot;))
 
 (set: $currentuser to 1st of (find: _rooms  where _rooms&#39;s handle contains _user, ...$characters))
